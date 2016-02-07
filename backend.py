@@ -15,6 +15,17 @@ class BackendDeveloper(object):
 
     @property
     def score(self):
+    	result = 0
+    	#if my knowledges are contained in key_req, then each skill will be 3 points
+    	#if my knowledges are contained in other_req, then each skill will be 1 point
+    	#otherwise there will not be any puntuation
+    	for x in self.knowledges:
+    		if x in self.key_requirements:
+    			result = result + 3
+    		elif x in self.other_requirements:
+    			result = result + 1
+
+        return result
         """
             Write the code to match the perfect candidate with the requirements above!
 
@@ -30,6 +41,12 @@ class BackendDeveloper(object):
             print ("Wait, you have created successfully the score method? Then make a pull request, we want you!")
 
 if __name__ == "__main__":
+    #defining my skills
+    knowledges = ('python','django','motivation','djangorestframework','software','REST','stars wars', 'linux','teamwork') 
+    #creating object
+    Me = BackendDeveloper('Javier', 'Fernandez', knowledges)
+    # calling that function in order to check whether or not I fulfill the requierments. 
+    Me.i_am_ready()
     """
         Write the code to create yourself, a BackendDeveloper, and let us know you are ready!
     """
