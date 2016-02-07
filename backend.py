@@ -26,14 +26,7 @@ class BackendDeveloper(object):
     			result = result + 1
 
         return result
-        """
-            Write the code to match the perfect candidate with the requirements above!
-
-                Output should be 10 or more for perfect matches
-                Output should be 0 for candidates that do not fulfill any requirements
-
-        """
-
+        
     def i_am_ready(self):
         if self.score > 7:
             print ("Make a pull request with this code, we want you!")
@@ -47,6 +40,4 @@ if __name__ == "__main__":
     Me = BackendDeveloper('Javier', 'Fernandez', knowledges)
     # calling that function in order to check whether or not I fulfill the requierments. 
     Me.i_am_ready()
-    """
-        Write the code to create yourself, a BackendDeveloper, and let us know you are ready!
-    """
+    
