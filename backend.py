@@ -4,10 +4,12 @@
 class BackendDeveloper(object):
     company = "LPS Ingenieria"
     team = "LPStech"
+    job_url = "http://lpsingenieria.com/buscamos-desarrolladores-web/"
 
-    def __init__(self, first_name, last_name, knowledges):
+    def __init__(self, first_name, last_name, email, knowledges):
         self.first_name = first_name
         self.last_name = last_name
+        self.email = email
         self.knowledges = knowledges
 
         self.key_requirements = ('python', 'django', 'motivation', 'software')
