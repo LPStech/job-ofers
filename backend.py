@@ -6,10 +6,11 @@ class BackendDeveloper(object):
     team = "LPStech"
     job_url = "http://lpsingenieria.com/buscamos-desarrolladores-web/"
 
-    def __init__(self, first_name, last_name, email, knowledges):
+    def __init__(self, first_name, last_name, github, linkedin, knowledges):
         self.first_name = first_name
         self.last_name = last_name
-        self.email = email
+        self.github = github
+        self.linkedin = linkedin
         self.knowledges = knowledges
 
         self.key_requirements = ('python', 'django', 'motivation', 'software')
@@ -19,11 +20,14 @@ class BackendDeveloper(object):
     def score(self):
         """
             Write the code to match the perfect candidate with the requirements above!
-
                 Output should be 10 or more for perfect matches
                 Output should be 0 for candidates that do not fulfill any requirements
-
         """
+        scores = 0
+        for item in self.knowledges:
+            if item in self.key_requirements or item in self.other_requirements:
+                scores += 1
+        return scores
 
     def i_am_ready(self):
         if self.score > 7:
@@ -31,7 +35,16 @@ class BackendDeveloper(object):
         else:
             print ("Wait, you have created successfully the score method? Then make a pull request, we want you!")
 
+
 if __name__ == "__main__":
     """
         Write the code to create yourself, a BackendDeveloper, and let us know you are ready!
     """
+    first_name = "Itziar"
+    last_name = "Polo Martinez"
+    email = "itziar276@gmail.com"
+    github = "https://github.com/itziar"
+    linkedin = "https://es.linkedin.com/in/itziar-polo-martinez-6219a354"
+    knowledges = ["python", "django", "motivation", "software", "git", "teamwork", "linux"]
+    me = BackendDeveloper(first_name, last_name, github, linkedin, knowledges)
+    me.i_am_ready()
