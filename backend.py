@@ -23,10 +23,12 @@ class BackendDeveloper(object):
                 Output should be 10 or more for perfect matches
                 Output should be 0 for candidates that do not fulfill any requirements
         """
+        # scores va sobre 100 (40 de key_requirements 60 de other_requirements) para que la salida sea mas de 10
+        # (Output should be 10 or more for perfect matches)
         scores = 0
         for item in self.knowledges:
-            if item in self.key_requirements or item in self.other_requirements:
-                scores += 1
+            if self.key_requirements.count(item) or self.other_requirements.count(item):
+                scores += 10  # output should be 10 or more for perfect matches
         return scores
 
     def i_am_ready(self):
